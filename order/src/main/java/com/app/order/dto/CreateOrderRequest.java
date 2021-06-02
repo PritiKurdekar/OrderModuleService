@@ -8,10 +8,8 @@ import com.app.order.entities.FurnitureType;
 
 public class CreateOrderRequest {
 	private Long customerId;
-	//Map<Long, Integer> furnituresPurchased = new HashMap<Long, Integer>();
-	private double totalAmount;
-	private LocalDate createdDate;
-	//private FurnitureType furnitureType;
+	private Map<Long, Integer> furnituresPurchased;
+	private String furnitureType;
 
 	public Long getCustomerId() {
 		return customerId;
@@ -21,36 +19,20 @@ public class CreateOrderRequest {
 		this.customerId = customerId;
 	}
 
-//	public Map<Long, Integer> getFurnituresPurchased() {
-//		return furnituresPurchased;
-//	}
-//
-//	public void setFurnituresPurchased(Map<Long, Integer> furnituresPurchased) {
-//		this.furnituresPurchased = furnituresPurchased;
-//	}
-
-	public double getTotalAmount() {
-		return totalAmount;
+	public Map<Long, Integer> getFurnituresPurchased() {
+		return furnituresPurchased;
 	}
 
-	public void setTotalAmount(double totalAmount) {
-		this.totalAmount = totalAmount;
+	public void setFurnituresPurchased(Map<Long, Integer> furnituresPurchased) {
+		this.furnituresPurchased = furnituresPurchased;
 	}
 
-	public LocalDate getCreatedDate() {
-		return createdDate;
+	public String getFurnitureType() {
+		return furnitureType;
 	}
 
-	public void setCreatedDate(LocalDate createdDate) {
-		this.createdDate = createdDate;
+	public void setFurnitureType(String furnitureType) {
+		this.furnitureType = furnitureType;
 	}
-
-//	public FurnitureType getFurnitureType() {
-//		return furnitureType;
-//	}
-//
-//	public void setFurnitureType(FurnitureType furnitureType) {
-//		this.furnitureType = furnitureType;
-//	}
 
 }

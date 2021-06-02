@@ -1,10 +1,12 @@
 package com.app.order.entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,28 +17,12 @@ public class Order {
 	@Id
 	private Long orderId;
 	private Long customerId;
-	// Map<Long, Integer> furnituresPurchased = new HashMap<Long, Integer>();
+
+	@ElementCollection
+	private Map<Long, Integer> furnituresPurchased;
 	private double totalAmount;
-	private LocalDate createdDate;
-	// private FurnitureType furnitureType;
-
-//	public Order(Long customerId, Map<Long, Integer> furnituresPurchased, double totalAmount, LocalDate createdDate,
-//			FurnitureType furnitureType) {
-//
-//		this.customerId = customerId;
-//		this.furnituresPurchased = furnituresPurchased;
-//		this.totalAmount = totalAmount;
-//		this.createdDate = createdDate;
-//		this.furnitureType = furnitureType;
-//	}
-	public Order(Long customerId, double totalAmount, LocalDate createdDate) {
-
-		this.customerId = customerId;
-
-		this.totalAmount = totalAmount;
-		this.createdDate = createdDate;
-
-	}
+	private LocalDateTime createdDate;
+	private FurnitureType furnitureType;
 
 	public Long getOrderId() {
 		return orderId;
@@ -54,13 +40,13 @@ public class Order {
 		this.customerId = customerId;
 	}
 
-//	public Map<Long, Integer> getFurnituresPurchased() {
-//		return furnituresPurchased;
-//	}
-//
-//	public void setFurnituresPurchased(Map<Long, Integer> furnituresPurchased) {
-//		this.furnituresPurchased = furnituresPurchased;
-//	}
+	public Map<Long, Integer> getFurnituresPurchased() {
+		return furnituresPurchased;
+	}
+
+	public void setFurnituresPurchased(Map<Long, Integer> furnituresPurchased) {
+		this.furnituresPurchased = furnituresPurchased;
+	}
 
 	public double getTotalAmount() {
 		return totalAmount;
@@ -70,21 +56,21 @@ public class Order {
 		this.totalAmount = totalAmount;
 	}
 
-	public LocalDate getCreatedDate() {
+	public LocalDateTime getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(LocalDate createdDate) {
+	public void setCreatedDate(LocalDateTime createdDate) {
 		this.createdDate = createdDate;
 	}
 
-//	public FurnitureType getFurnitureType() {
-//		return furnitureType;
-//	}
-//
-//	public void setFurnitureType(FurnitureType furnitureType) {
-//		this.furnitureType = furnitureType;
-//	}
+	public FurnitureType getFurnitureType() {
+		return furnitureType;
+	}
+
+	public void setFurnitureType(FurnitureType furnitureType) {
+		this.furnitureType = furnitureType;
+	}
 
 	@Override
 	public boolean equals(Object o) {
