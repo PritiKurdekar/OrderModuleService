@@ -11,6 +11,13 @@ public class CreateOrderRequest {
 	private Map<Long, Integer> furnituresPurchased;
 	private String furnitureType;
 
+	public CreateOrderRequest(Long customerId, Map<Long, Integer> furnituresPurchased, String furnitureType) {
+
+		this.customerId = customerId;
+		this.furnituresPurchased = furnituresPurchased;
+		this.furnitureType = furnitureType;
+	}
+
 	public Long getCustomerId() {
 		return customerId;
 	}

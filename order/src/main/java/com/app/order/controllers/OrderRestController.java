@@ -23,22 +23,21 @@ import com.app.order.service.IOrderService;
 import com.app.order.util.OrderUtil;
 
 import antlr.collections.List;
-import io.swagger.annotations.Api;
 
-@Api("orders")
+//@Api("orders")
 @Validated
 @RequestMapping("/orders")
 @RestController
 public class OrderRestController {
 
-	@Autowired
-	private OrderUtil orderUtil;
-
-	@Autowired
-	private IOrderService service;
-
-	@Autowired
-	private RestTemplate restTemplate;
+//	@Autowired
+//	private OrderUtil orderUtil;
+//
+//	@Autowired
+//	private IOrderService service;
+//
+//	@Autowired
+//	private RestTemplate restTemplate;
 
 //	@GetMapping
 //    public List<OrderDetails> allOrders() {
@@ -47,29 +46,12 @@ public class OrderRestController {
 //        return response;
 //    }
 
-	@GetMapping("/byid/{id}")
-	public OrderDetails getOrder(@PathVariable("id") long oid) {
-		Order order = service.findOrderByOrderId(oid);
-		OrderDetails response = orderUtil.toOrderDetails(order);
-		return response;
-	}
+//	@GetMapping("/byid/{id}")
+//	public OrderDetails getOrder(@PathVariable("id") long oid) {
+//		Order order = service.findOrderByOrderId(oid);
+//		OrderDetails response = orderUtil.toOrderDetails(order);
+//		return response;
+//	}
 
-	@ResponseStatus(HttpStatus.CREATED)
-	@PostMapping("/add")
-	public OrderDetails addOrder(@RequestBody CreateOrderRequest requestData) {
-//		System.out.println("inside addOrder() \n CustomerID :" + requestData.getCustomerId()
-//				+ "\nFurnitures Purchased : " + requestData.getFurnituresPurchased() + "\n Total amount : "
-//				+ requestData.getTotalAmount() + "\nDate : " + requestData.getCreatedDate() + "\nFurniture Type : "
-//				+ requestData.getFurnitureType());
-//		Order created = service.add(requestData.getCustomerId(), requestData.getFurnituresPurchased(),
-//				requestData.getTotalAmount(), requestData.getCreatedDate(), requestData.getFurnitureType());
-
-		System.out.println("inside addOrder() \n CustomerID :" + requestData.getCustomerId() + "\n Total amount : "
-				+ requestData.getTotalAmount() + "\nDate : " + requestData.getCreatedDate());
-		Order created = service.add(requestData.getCustomerId(), requestData.getTotalAmount(),
-				requestData.getCreatedDate());
-
-		OrderDetails response = orderUtil.toOrderDetails(created);
-		return response;
-	}
+	
 }

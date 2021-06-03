@@ -10,7 +10,8 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Table(name="table_order")
 @Entity
 public class Order {
 	@GeneratedValue

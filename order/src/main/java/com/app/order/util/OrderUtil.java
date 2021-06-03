@@ -18,10 +18,10 @@ public class OrderUtil {
 		OrderDetails details = new OrderDetails();
 		details.setOrderId(order.getOrderId());
 		details.setCustomerId(order.getCustomerId());
-		// details.setFurnituresPurchased(order.getFurnituresPurchased());
-		details.setTotalAmount(order.getTotalAmount());
-		details.setCreatedDate(order.getCreatedDate());
-		// details.setFurnitureType(order.getFurnitureType());
+		 details.setFurnituresPurchased(order.getFurnituresPurchased());
+		 details.setTotalAmount(order.getTotalAmount());
+		 details.setCreatedDate(order.getCreatedDate());
+		 details.setFurnitureType(order.getFurnitureType());
 
 		return details;
 	}

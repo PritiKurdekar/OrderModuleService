@@ -56,6 +56,7 @@ public class OrderServiceImpl implements IOrderService {
 			orderAmount = orderAmount + totalFurnitureCost;
 		}
 		order.setTotalAmount(orderAmount);
+		order.setFurnitureType(FurnitureType.Household);
 		order = repository.save(order);
 		OrderDetails details = orderUtil.toOrderDetails(order);
 		return details;
